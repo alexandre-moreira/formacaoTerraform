@@ -1,0 +1,11 @@
+# Verificar a versão do azure CLI
+az version
+
+# Logar na nossa conta no azure
+az login
+
+# Criar resource group pelo VS Code
+az group --location brazilsouth --name rgazureclivscode
+
+# Deletar resource group
+az group delete --name rgazureclivscode
