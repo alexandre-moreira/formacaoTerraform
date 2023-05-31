@@ -25,3 +25,7 @@ resource "azurerm_virtual_network" "vnet" {
     resource_group_name = "rg-terraform-mod5"
     address_space = concat(var.vnetips,["192.168.0.0/16"])
 }
+
+output "vnet-numerosips" {
+    value = length("${azurerm_virtual_network.vnet.address_space}")
+}
