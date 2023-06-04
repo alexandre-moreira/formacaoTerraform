@@ -14,5 +14,5 @@ Terrafomr é uma ferramenta open source de provisionamento de infraestrutura, cr
 * terraform plan    -> Inspeciona e pré-visualizar as possíveis mudanças que seriam aplicadas em uma infraestrutura. 
 * terraform apply   -> Cria e altera as instâncias/objetos no Provider. 
 * terraform destroy -> Destroi todos os recursos que foram criados durante o processo de criação.
-* terraform outout  -> Mostra um valor de uma variável.
+* terraform outout  -> Mostra um valor de uma variável
 
