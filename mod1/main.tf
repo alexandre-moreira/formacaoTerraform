@@ -1,10 +1,22 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.59.0"
+    }
+  }
+}
+
+# Configure the Microsoft Azure Provider
 provider "azurerm" {
-    features{}
+  features {}
 }
 
-resource "azurerm_resource_group" "rg" {
-  name = "RG-Begin"
-  location = "eastus2"
+# Create a resource group
+resource "azurerm_resource_group" "mtc-rg" {
+  name     = "mtc-resources"
+  location = "East Us"
+  tags = {
+    "ambiente" = "dev"
+  }
 }
-
-//https://www.youtube.com/watch?v=ODMtvvAjAKU
