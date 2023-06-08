@@ -5,3 +5,5 @@
 */.terraform.lock.hcl
 */mykey*
 mod1/.terraform.tfstate.lock.info
+mod1/mtcazurekey.pub
+mod1/mtcazurekey
