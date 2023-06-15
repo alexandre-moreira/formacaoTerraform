@@ -60,3 +60,24 @@ variable "regras_entrada" {
     }
   
 }
+
+resource "azurerm_network_security_rule" "regras_entrada_liberada"{
+    for_each = var.regras_entrada
+    resource_group_name = azurerm_resource_group.rg.name
+    name = "porta_entrada_${each.value}"
+    priority = each.key
+    direction = "Inbound"
+    access = "Allow"
+    source_port_range = "*"
+    protocol = "Tcp"
+    destination_port_range = each.key
+    source_address_prefix = "*"
+    destination_address_prefix = "*"
+    network_security_group_name = azurerm_network_security_group.nsg.name
+}
+
+resource "azurerm_subnet_network_security_group_association" "ngsassociacao" {
+    subnet_id = azurerm_subnet.subnet.id
+    network_security_group_id = azurerm_network_security_group.nsg.id
+  
+}
