@@ -43,3 +43,20 @@ resource "azurerm_network_interface" "nic" {
   }
     
 }
+
+resource "azurerm_network_security_group" "nsg" {
+    name = "vmwinserver-nsg"
+    location = azurerm_resource_group.rg.location
+    resource_group_name = azurerm_resource_group.rg.name
+}
+
+variable "regras_entrada" {
+    type = map(any)
+    default = {
+      101 = 80
+      102 = 443
+      103 = 3389
+      104 = 22
+    }
+  
+}
